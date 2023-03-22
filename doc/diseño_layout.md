@@ -5,16 +5,16 @@
 
 ```json
 height: {
-                "10vh": "10vh",
-                "15vh": "15vh",
-                "65vh": "65vh",
-            },
-            colors: {
-                header: "#E6621F",
-                nav: "#EDEDEE",
-                main: "#FFFFFF",
-                footer: "#898989",
-            },
+            "10vh": "10vh",
+            "15vh": "15vh",
+            "65vh": "65vh",
+        },
+        colors: {
+            header: "#E6621F",
+            nav: "#EDEDEE",
+            main: "#FFFFFF",
+            footer: "#898989",
+        },
 ```
 
 -   Creamos el fichero [**_layout.blade.php_**](../resources/views/layout.blade.php).

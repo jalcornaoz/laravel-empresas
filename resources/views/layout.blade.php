@@ -8,13 +8,8 @@
     @vite(['resources/css/app.css']) 
 </head>
 <body>
-    <header class="h-15vh bg-header text-center text-2xl">
-        <div class="grid grid-cols-6 gap-4">
-            <div class=""><img src="{{asset("./img/logo.jpg")}}" alt="logo" class="h-15vh"></div>
-            <div class="col-span-3  align-bottom">DATOS DE EMPRESA</div>
-            <div class="col-span-2">Login</div>
-        </div>
-    </header>
+    <x-layout.header />
+        
     <nav class="h-10vh bg-nav">
         <a href="about">Acerca de</a>
         <a href="contacta">Contacta con nosotros</a>
