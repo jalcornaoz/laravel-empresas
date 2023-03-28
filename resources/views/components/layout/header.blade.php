@@ -1,5 +1,5 @@
 <header class="h-15vh bg-header">
-    <div class="flex flex-row mx-10 h-15vh bg-header">
+    <div class="flex flex-row mx-10 h-15vh">
         <div class="flex-none"><img src="{{asset("./img/logo.jpg")}}" alt="logo" class="h-15vh"></div>
         <div class="flex-auto m-auto text-5xl text-center">DATOS DE EMPRESA</div>
         <div class="flex-end">
@@ -19,7 +19,7 @@
                         <input type="email" name="email" placeholder="ejemplo@correo.com" class="text-s m-2 w-1/3">
                         <input type="password" name="password" placeholder="password" class="text-s m-2 w-1/4">
                     </div>
-                    <div class="text-xl my-3 flex justify-end">
+                    <div class="text-xl my-1 flex justify-end">
                         <button type="submit" value="login" class="mx-2">Login</button>
                         <a href="{{route('register')}}" class="mx-2">Registrarse</a>
                     </div>

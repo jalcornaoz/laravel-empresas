@@ -17,6 +17,7 @@ module.exports = {
                 "10vh": "10vh",
                 "15vh": "15vh",
                 "65vh": "65vh",
+                "70vh": "70vh"
             },
             colors: {
                 header: "#E6621F",

@@ -13,7 +13,7 @@
         <x-input-label for="pvp">Precio</x-input-label>
         <x-text-input type="text" name="PVP" id='pvp' />
         <x-input-label for="familia">Familia</x-input-label>
-        <x-text-input type="text" name="familia" id='familia' /><br />
+        <x-text-input type="text" name="familia" id='familia' />
         <x-primary-button type="submit" value='guardar'>Guardar</x-primary-button>
     </form>
     
