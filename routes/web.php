@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EmpresaController;
+use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,8 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('empresas', EmpresaController::class);
+Route::resource('productos', ProductoController::class);
 
-Route::view('/', 'empresa.main');
+Route::view('main', 'empresa.main');
 
 // Route::get('/', function () {
 //     return view('welcome');

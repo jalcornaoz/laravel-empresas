@@ -11,10 +11,8 @@
     <x-layout.header />
         
     <nav class="h-10vh bg-nav">
-        <a href="about">Acerca de</a>
-        <a href="contacta">Contacta con nosotros</a>
-        <a href="noticias">Noticias</a>
-        @yield('menu')
+        <x-nav-link href="{{route('empresas.index')}}" class="px-5">EMPRESAS</x-nav-link>
+        <x-nav-link href="{{route('productos.index')}}" class="px-5">PRODUCTOS</x-nav-link>
     </nav>
     <main class="h-65vh bg-main">
         @yield('contenido')

@@ -61,3 +61,29 @@ cd <<nombre proyecto>>
 ```
 
 [ Diseño_pantallas ](./doc/diseño_layout.md)
+
+## Trabajar con tablas
+
+Hay que crear un modelo por cada tabla:
+
+```shell
+php artisan make:model Producto --all
+```
+
+Nos crea toda la extructura (Model, Factory, Migration, Seeder, Request, Controller, Policy).
+
+Para nuestro caso con la tabla **producto** que ya esta creada nos sobran (Factory, Migration, Seeder). Borramos los ficheros que se han creado hacer `make:model --all`.
+
+En [_ProductoController.php_](./app/Http/Controllers/ProductoController.php) nos ha creado los metodos (_index()_, _create()_, _show()_, _edit()_, _update()_ y _destroy()_).
+
+Podemos ver las rutas creadas: `php artisan route:list`
+
+```shell
+GET|HEAD  productos ...,,,,,,,,,,.... productos.index › ProductoController@index
+POST      productos ................. productos.store › ProductoController@store
+GET|HEAD  productos/create .......... productos.create › ProductoController@create
+GET|HEAD  productos/{producto} ...... productos.show › ProductoController@show
+PUT|PATCH productos/{producto} ...... productos.update › ProductoController@update
+DELETE    productos/{producto} ...... productos.destroy › ProductoController@destroy
+GET|HEAD  productos/{producto}/edit . productos.edit › ProductoController@edit
+```

@@ -1,6 +1,6 @@
 @extends('layout')
 @section('contenido')
-    <table>
+    <table class="w-full">
         <caption>Listado de empresas</caption>
         <tr>
             <th>ID</th>
