@@ -32,7 +32,7 @@ class ProductoController extends Controller
     //Display the specified resource.
     public function show(Producto $producto)
     {
-        echo "Estoy en show";
+        return view('producto.mostrar_producto',['producto'=>$producto]);
     }
 
     //Show the form for editing the specified resource.

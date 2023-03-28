@@ -16,6 +16,12 @@
             <td>{{$producto->PVP}}</td>
             <td>{{$producto->familia}}</td>
             <td>
+                <form action="{{route('productos.show',$producto->cod)}}" method="get">
+                    @csrf
+                    <x-primary-button>Mostrar</x-primary-button>
+                </form>    
+            </td>
+            <td>
                 <form action="{{route('productos.destroy',$producto->cod)}}" method="post">
                     @method('DELETE')
                     @csrf
@@ -26,8 +32,7 @@
                 <form action="{{route('productos.edit',$producto->cod)}}" method="get">
                     @csrf
                     <x-primary-button>Editar</x-primary-button>
-                </form>
-                
+                </form>    
             </td>
         </tr>   
         @endforeach
