@@ -6,5 +6,10 @@
 
 
 @section('contenido')
-    <h1 class="text-center">CONTENIDO DE LA PÁGINA</h1>
+    @auth
+    <h1 class="text-center">Selecciona EMPRESAS o PRODUCTOS</h1>
+    @endauth
+    @guest
+    <h1 class="text-center">Debes loguearte primero</h1>
+    @endguest
 @endsection

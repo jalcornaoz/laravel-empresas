@@ -3,6 +3,7 @@
     <title>Editar Producto</title>
 @endsection
 @section('contenido')
+@auth
     <form action="{{route('productos.update',$producto->cod)}}" method="post">
         @method('PUT')
         @csrf
@@ -21,5 +22,8 @@
         <br />
         <x-primary-button>Guardar</x-primary-button>
     </form>
-    
+    @endauth
+    @guest
+    <h1 class="text-center">Debes loguearte primero</h1>
+    @endguest
 @endsection

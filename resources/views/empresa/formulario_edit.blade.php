@@ -3,6 +3,7 @@
     <title>Editar Empresa</title>
 @endsection
 @section('contenido')
+    @auth
     <form action="{{route('empresas.update',$empresa->id)}}" method="post">
         @method('PUT')
         @csrf
@@ -13,5 +14,8 @@
         <br />
         <x-primary-button>Guardar</x-primary-button>
     </form>
-    
+    @endauth
+    @guest
+    <h1 class="text-center">Debes loguearte primero</h1>
+    @endguest
 @endsection

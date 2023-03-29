@@ -3,6 +3,7 @@
     <title>Nuevo Producto</title>
 @endsection
 @section('contenido')
+@auth
     <form action="{{route('productos.store')}}" method="post">
         @csrf
         <x-input-label for="cod">Código</x-input-label>
@@ -19,5 +20,8 @@
         <x-text-input type="text" name="familia" id='familia' />
         <x-primary-button type="submit" value='guardar'>Guardar</x-primary-button>
     </form>
-    
+    @endauth
+    @guest
+    <h1 class="text-center">Debes loguearte primero</h1>
+    @endguest   
 @endsection

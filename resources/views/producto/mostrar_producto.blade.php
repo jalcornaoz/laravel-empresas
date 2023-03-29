@@ -3,6 +3,7 @@
     <title>Mostrar Producto</title>
 @endsection
 @section('contenido')
+@auth
     <table>
         <caption>Producto</caption>
         <tr>
@@ -34,5 +35,8 @@
         @csrf
         <x-primary-button>Volver</x-primary-button>
     </form>
-    
+    @endauth
+    @guest
+    <h1 class="text-center">Debes loguearte primero</h1>
+    @endguest
 @endsection
