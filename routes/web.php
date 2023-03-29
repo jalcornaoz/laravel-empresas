@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::resource('empresas', EmpresaController::class);
 Route::resource('productos', ProductoController::class);
 
-Route::view('main', 'empresa.main');
+Route::view('/', 'main');
 
 // Route::get('/', function () {
 //     return view('welcome');

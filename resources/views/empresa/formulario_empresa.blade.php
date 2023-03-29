@@ -1,4 +1,7 @@
 @extends('layout')
+@section('titulo')
+    <title>Nueva Empresa</title>
+@endsection
 @section('contenido')
     <form action="{{route('empresas.store')}}" method="post">
         @csrf

@@ -1,4 +1,7 @@
 @extends('layout')
+@section('titulo')
+    <title>Editar Producto</title>
+@endsection
 @section('contenido')
     <form action="{{route('productos.update',$producto->cod)}}" method="post">
         @method('PUT')

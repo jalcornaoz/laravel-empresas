@@ -1,4 +1,7 @@
 @extends('layout')
+@section('titulo')
+    <title>Mostrar Empresa</title>
+@endsection
 @section('contenido')
     <table>
         <caption>Empresa</caption>

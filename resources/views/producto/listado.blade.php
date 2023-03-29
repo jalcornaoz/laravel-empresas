@@ -1,4 +1,7 @@
 @extends('layout')
+@section('titulo')
+    <title>Listar Productos</title>
+@endsection
 @section('contenido')
     <x-nav-link href="{{route('productos.create')}}" class="px-4 py-4">Crear Producto</x-nav-link>
     <table class="w-full text-center">
