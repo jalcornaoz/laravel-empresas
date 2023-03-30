@@ -24,7 +24,7 @@ class EmpresaController extends Controller
     //Store a newly created resource in storage.
     public function store(StoreEmpresaRequest $request)
     {
-        $empresa=new Empresa($request->input());
+        $empresa = new Empresa($request->input());
         $empresa->saveOrFail();
         return redirect(route('empresas.index'));
     }
@@ -32,7 +32,7 @@ class EmpresaController extends Controller
     //Display the specified resource.
     public function show(Empresa $empresa)
     {
-        return view('empresa.mostrar_empresa',['empresa'=>$empresa]);
+        return view('empresa.mostrar_empresa', ['empresa' => $empresa]);
     }
 
     /**
@@ -55,7 +55,7 @@ class EmpresaController extends Controller
     //Remove the specified resource from storage.
     public function destroy(Empresa $empresa)
     {
-        $empresa->delete();
+        $empresa->deleteOrFail();
         return redirect(route('empresas.index'));
     }
 }
