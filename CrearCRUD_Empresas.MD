@@ -14,13 +14,13 @@ php artisan make:model Empresa --all
 php artisan migrate:fresh --seed
 ```
 
-5. En [web.php](./routes/web.php) creamos las rutas para todos los recursos de Empresa
+5. En [web.php](./routes/web.php) creamos las rutas para todos los recursos de **Empresa**
 
 ```php
 Route::resource('empresas', EmpresaController::class);
 ```
 
-Podemos ver las rutas que tenemos creadas para Empresa
+Podemos ver las rutas que tenemos creadas para **Empresa**
 
 ```shell
 $ php artisan route:list
@@ -46,13 +46,13 @@ GET|HEAD    empresas/{empresa}/edit .. empresas.edit › EmpresaController@edit
   }
   ```
 
-  - En [Empresa.php](./app/Models/Empresa.php) hay que decir que campos podemos modificar:
+  - En el modelo [Empresa.php](./app/Models/Empresa.php) hay que decir que campos podemos modificar:
 
   ```php
   protected $fillable = ['nombre','direccion'];
   ```
 
-- Para implementar las rutas que usan los verbos **PUT** y **DELETE** como no existen estos metodos para la etiqueta `<form>`, tenemos que implementar la directiva `@method('PUT')` o `@method('DELETE')` respectivamente seguido a la etiqueta `</form>`.
+- Para implementar las rutas que usan los verbos **PUT** y **DELETE**, como no existen estos metodos para la etiqueta `<form>`, tenemos que implementar la directiva `@method('PUT')` o `@method('DELETE')` respectivamente seguido a la etiqueta `<form>`.
 
 ## CREATE (métodos create y store)
 
@@ -80,9 +80,9 @@ public function store(StoreEmpresaRequest $request)
 
 - se garda la información que nos llega en `$request` y nos redirigue a al metodo `index`.
 
-## READ (método index)
+## READ (métodos index y show)
 
-1. Metodo `index`
+1. Metodo `index` (para mostrar listado de empresas)
 
 ```php
 public function index()
@@ -92,7 +92,15 @@ public function index()
     }
 ```
 
-- en la vista [listado](./resources/views/empresa/listado.blade.php) todos los registros.
+- en la vista [listado](./resources/views/empresa/listado.blade.php) nos muestra todos los registros.
+2. Método `show` (para mostrar los datos de una empresa)
+```php
+public function show(Empresa $empresa)
+    {
+        return view('empresa.mostrar_empresa', ['empresa' => $empresa]);
+    }
+```
+- nos lleva a la vista [mostrar_empresa](./resources/views/empresa/mostrar_empresa.blade.php), donde nos muestra la empresa que hemos recibido como argumento.
 
 ## UPDATE (métodos edit y update)
 
@@ -118,7 +126,7 @@ public function update(UpdateEmpresaRequest $request, Empresa $empresa)
     }
 ```
 
-- se actualizan los valores que hemos modificado en el formulario
+- se actualizan los valores que hemos modificado en el formulario.
 
 ## DELETE (método destroy)
 
@@ -132,4 +140,4 @@ public function destroy(Empresa $empresa)
     }
 ```
 
-- eliminamos el registro seleccionado
+- eliminamos el registro seleccionado.
