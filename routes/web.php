@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\EmpresaController;
+use App\Http\Controllers\IdiomaController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -18,12 +20,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('empresas', EmpresaController::class);
 Route::resource('productos', ProductoController::class);
+Route::resource('alumno', AlumnoController::class);
+Route::resource('idiomas', IdiomaController::class);
 
-Route::view('/', 'main');
+// Route::view('/', 'main');
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

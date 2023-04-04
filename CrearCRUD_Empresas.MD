@@ -65,7 +65,7 @@ public function create()
     }
 ```
 
-- nos lleva a la vista [formulario_empresa](./resources/views/empresa/formulario_empresa.blade.php) con los campos para crear un nuevo registro.
+- nos lleva a la vista [formulario_empresa.blade.php](./resources/views/empresa/formulario_empresa.blade.php) con los campos para crear un nuevo registro.
 
 2. Método `store`
 
@@ -92,14 +92,17 @@ public function index()
     }
 ```
 
-- en la vista [listado](./resources/views/empresa/listado.blade.php) nos muestra todos los registros.
+- en la vista [listado.blade.php](./resources/views/empresa/listado.blade.php) nos muestra todos los registros.
+
 2. Método `show` (para mostrar los datos de una empresa)
+
 ```php
 public function show(Empresa $empresa)
     {
         return view('empresa.mostrar_empresa', ['empresa' => $empresa]);
     }
 ```
+
 - nos lleva a la vista [mostrar_empresa](./resources/views/empresa/mostrar_empresa.blade.php), donde nos muestra la empresa que hemos recibido como argumento.
 
 ## UPDATE (métodos edit y update)
