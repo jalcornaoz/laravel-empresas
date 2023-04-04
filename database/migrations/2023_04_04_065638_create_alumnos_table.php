@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('alumnos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->nombre();
-            $table->telefono();
-            $table->email();
-            $table->foreignId(empresa_id)->constrained();
+            $table->string("nombre");
+            $table->string("telefono");
+            $table->string("email");
+            $table->foreignId("empresa_id")->constrained();
         });
     }
 

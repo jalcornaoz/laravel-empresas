@@ -7,7 +7,7 @@
 
 @section('contenido')
     @auth
-    <h1 class="text-center">Selecciona EMPRESAS o PRODUCTOS</h1>
+    <h1 class="text-center">Selecciona EMPRESAS, ALUMNOS o PRODUCTOS</h1>
     @endauth
     @guest
     <h1 class="text-center">Debes loguearte primero</h1>

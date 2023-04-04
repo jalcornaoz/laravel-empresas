@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('idiomas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->idioma();
-            $table->foreignId(alumno_id)->constrained();
+            $table->string("idioma");
+            $table->foreignId("alumno_id")->constrained();
         });
     }
 

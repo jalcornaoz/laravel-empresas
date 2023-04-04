@@ -16,8 +16,6 @@ class IdiomaFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            'idioma' => fake()->languageCode()
-        ];
+        return [];
     }
 }

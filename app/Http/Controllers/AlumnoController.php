@@ -13,8 +13,10 @@ class AlumnoController extends Controller
      */
     public function index()
     {
-        //
+        $alumnos = Alumno::paginate(12);
+        return view('alumno.listado', ['alumnos' => $alumnos]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -29,7 +31,9 @@ class AlumnoController extends Controller
      */
     public function store(StoreAlumnoRequest $request)
     {
-        //
+        $alumno = new Alumno($request->input());
+        $alumno->saveOrFail();
+        return redirect(route('alumnos.index'));
     }
 
     /**
@@ -37,7 +41,7 @@ class AlumnoController extends Controller
      */
     public function show(Alumno $alumno)
     {
-        //
+        return view('alumno.mostrar_alumno', ['alumno' => $alumno]);
     }
 
     /**
@@ -45,7 +49,7 @@ class AlumnoController extends Controller
      */
     public function edit(Alumno $alumno)
     {
-        //
+        return view('alumno.formulario_edit', ['alumno' => $alumno]);
     }
 
     /**
@@ -53,7 +57,9 @@ class AlumnoController extends Controller
      */
     public function update(UpdateAlumnoRequest $request, Alumno $alumno)
     {
-        //
+        $datos = $request->input();
+        $alumno->update($datos);
+        return redirect(route('alumnos.index'));
     }
 
     /**
@@ -61,6 +67,7 @@ class AlumnoController extends Controller
      */
     public function destroy(Alumno $alumno)
     {
-        //
+        $alumno->deleteOrFail();
+        return redirect(route('alumnos.index'));
     }
 }

@@ -20,12 +20,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('empresas', EmpresaController::class);
 Route::resource('productos', ProductoController::class);
-Route::resource('alumno', AlumnoController::class);
+Route::resource('alumnos', AlumnoController::class);
 Route::resource('idiomas', IdiomaController::class);
 
-// Route::view('/', 'main');
+Route::view('/', 'main');
 
-Route::get('/', function () {
+//Ruta para las pruebas con Vue
+Route::get('/main', function () {
     return view('welcome');
 });
 
