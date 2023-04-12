@@ -13,10 +13,22 @@ class AlumnoController extends Controller
      */
     public function index()
     {
-        $alumnos = Alumno::paginate(12);
-        return view('alumno.listado', ['alumnos' => $alumnos]);
+        $alumnos = Alumno::paginate(10);
+
+        $campos = array_keys($alumnos[0]->getAttributes());
+
+        unset($campos[array_search("created_at", $campos)]);
+        unset($campos[array_search("updated_at", $campos)]);
+        unset($campos[array_search("empresa_id", $campos)]);
+
+        return view('alumno.listado', ['filas' => $alumnos, 'campos' => $campos, 'tabla' => 'alumnos']);
     }
 
+    public function get_paginate()
+    {
+        $alumnos = Alumno::paginate(10);
+        return response($alumnos);
+    }
 
     /**
      * Show the form for creating a new resource.

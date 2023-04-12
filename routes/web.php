@@ -18,6 +18,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get("empresas/paginate", [
+    \App\Http\Controllers\EmpresaController::class, 'get_paginate'
+]);
+Route::get("alumnos/paginate", [
+    \App\Http\Controllers\AlumnoController::class, 'get_paginate'
+]);
+Route::get("idiomas/paginate", [
+    \App\Http\Controllers\IdiomaController::class, 'get_paginate'
+]);
+
 Route::resource('empresas', EmpresaController::class);
 Route::resource('productos', ProductoController::class);
 Route::resource('alumnos', AlumnoController::class);

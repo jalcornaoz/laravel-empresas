@@ -19,10 +19,10 @@
             <td>{{$empresa->direccion}}</td>
         </tr>
     </table>
-    <form action="{{route('empresas.index')}}" method="get">
-        @csrf
-        <x-primary-button>Volver</x-primary-button>
-    </form>    
+    <div>
+        <a href="{{route("empresas.index")}}">Volver</a>
+    </div>
+ 
     @endauth
     @guest
     <h1 class="text-center">Debes loguearte primero</h1>

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string("idioma");
-            $table->foreignId("alumno_id")->constrained();
+            $table->foreignId("alumno_id")->constrained()->cascadeOnDelete();
         });
     }
 

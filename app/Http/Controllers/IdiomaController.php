@@ -13,8 +13,22 @@ class IdiomaController extends Controller
      */
     public function index()
     {
-        $idiomas = Idioma::paginate(12);
-        return view('idioma.listado', ['idiomas' => $idiomas]);
+        $idiomas = Idioma::paginate(10);
+
+        $campos = array_keys($idiomas[0]->getAttributes());
+
+
+        unset($campos[array_search("created_at", $campos)]);
+        unset($campos[array_search("updated_at", $campos)]);
+        unset($campos[array_search("alumno_id", $campos)]);
+
+        return view('idioma.listado', ['filas' => $idiomas, 'campos' => $campos, 'tabla' => 'idiomas']);
+    }
+
+    public function get_paginate()
+    {
+        $idiomas = Idioma::paginate(10);
+        return response($idiomas);
     }
 
     /**

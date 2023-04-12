@@ -11,13 +11,20 @@ class EmpresaController extends Controller
     //Display a listing of the resource.
     public function index()
     {
-        $empresas = Empresa::all();
+        $empresas = Empresa::paginate(10);
 
         $campos = array_keys($empresas[0]->getAttributes());
+
         unset($campos[array_search("created_at", $campos)]);
         unset($campos[array_search("updated_at", $campos)]);
 
         return view('empresa.listado', ['filas' => $empresas, 'campos' => $campos, 'tabla' => 'Empresas']);
+    }
+
+    public function get_paginate()
+    {
+        $empresas = Empresa::paginate(10);
+        return response($empresas);
     }
 
     //Show the form for creating a new resource.
@@ -60,7 +67,8 @@ class EmpresaController extends Controller
     //Remove the specified resource from storage.
     public function destroy(Empresa $empresa)
     {
-        $empresa->deleteOrFail();
-        return redirect(route('empresas.index'));
+        $empresa->delete();
+        $empresas = Empresa::paginate(10);
+        return response($empresas);
     }
 }
